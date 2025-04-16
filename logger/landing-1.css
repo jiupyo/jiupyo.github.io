@@ -1,0 +1,161 @@
+@charset "utf-8";
+/* reset.css */
+* {margin: 0; padding: 0;}
+/* header영역 */
+header {
+  /* 브라우저 한페이지로 기본사이즈 설정 */
+  height: 100vh;
+  background-image: url(./images/lemon.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#head {
+  width: 500px;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+#head > p:nth-child(1) {
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  font-weight: bolder;
+}
+#head > p:nth-child(2) {
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+/* #head > div:nth-child(3) { */
+.button_style{
+  background-color: palevioletred;
+  width: 100px;
+  font-size: 0.6rem;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: auto;
+  cursor: pointer;
+  color: #fff;
+}
+#head > div:nth-child(3):hover {
+  background-color: rgb(126, 31, 63);
+}
+/* section id=sns 영역 */
+section#sns{
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+section#sns > .card{
+  width: 300px;
+  text-align: center;
+}
+section#sns > .card > .icon{
+  background-color: #aaa;
+  width: 70px;
+  height: 70px;
+  margin: 20px auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;     /*주축에 대한 정렬*/
+  align-items: center;     /*교차축에 대한 정렬*/
+}
+section#sns > .card > .icon > i{
+  font-size: 2rem;
+  color: #fff;
+}
+section#sns > .card > p:nth-of-type(1){
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+section#sns > .card > p:nth-of-type(2){
+  font-size: 0/8rem;
+  color: #333;
+  line-height: 2;
+  padding: 10px;
+}
+section#sns > .card > a{
+  text-decoration: none;
+  color: #5D9AB2;
+}
+section#sns > .card > a > span{
+  font-weight: bolder;
+}
+
+/* section id=detail */
+section#detail{
+  background-color: #5D9AB2;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+section#life{
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+section#detail > div,
+section#life > div{
+  width: 400px;
+  padding: 50px;
+}
+section#detail > .img{
+  background-image: url(./images/computer.jpg);
+  background-size: cover;
+  background-position: center;
+}
+section#life > .img{
+  background-image: url(./images/glass.jpg);
+  background-size:cover;
+  background-position: center;
+}
+section#detail > .txt > p:nth-of-type(1),
+section#life > .txt > p:nth-of-type(1){
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
+section#detail > .txt > p:nth-of-type(2),
+section#life > .txt > p:nth-of-type(2){
+  font-size: 0.8rem;
+  line-height: 2;
+  margin: 10px 0;
+}
+section#detail > .txt > p:nth-of-type(3),
+section#life > .txt > p:nth-of-type(3){
+  margin: 0;
+}
+
+/* footer */
+footer{
+  padding: 20px;
+  background-color: #2B5566;
+  color: #fff;
+}
+footer a{
+  text-decoration: none;
+  color: inherit;
+}
+footer > nav{
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+footer > nav > div{
+  flex: 1;
+}
+footer > nav > div > p{
+  border-bottom: 1px solid #fff;
+}
+footer > nav > div > ul{
+  list-style: none;
+}
+footer > nav > div > ul > li{
+  padding: 10px 0;
+}
+
