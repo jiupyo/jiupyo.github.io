@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Yes24-살아갈 날들을 위한 괴테의 시 페이지</title>
+  </head>
+  <body>
+    <main>
+      <section id="book">
+        <div class="book-img">
+          <div class="page">
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+          <div class="side"></div>
+        </div>
+      </section>
+      <section id="detail">
+        <div class="one">
+          <div>
+            <p class="border-box">소득공제</p>
+            <p class="border-box">오늘의책</p>
+          </div>
+          <h1>살아갈 날들을 위한 괴테의 시</h1>
+          <div>
+            <p class="r-border">김종원 저</p>
+            <p class="r-border">퍼스트펭귄</p>
+            <p>2025년 01월 17일</p>
+          </div>
+          <div>
+            <p>★★★★★ 9.8</p>
+            <p class="border-box">▽</p>
+            <p class="r-border">회원리뷰(61건)</p>
+            <p>판매지수 101,097</p>
+            <p class="border-box">?</p>
+            <p class="r-border">국내도서 50위</p>
+            <p>국내도서 top100 12주</p>
+          </div>
+        </div>
+        <div class="two">
+          <div>
+            <p class="text-red rect-redius">구매헤택</p>
+            <p class="text-red text-w">
+              [세계책의날]클립보드, 북파우치(포인트 차감)
+            </p>
+          </div>
+          <div>
+            <p>정가</p>
+            <p>19,000원</p>
+          </div>
+          <div>
+            <p class="text-w">판매가</p>
+            <p class="text-red text-big">
+              17,100원<span style="font-size: 1rem; font-weight: 500"
+                >(10%할인)</span
+              >
+            </p>
+          </div>
+          <div>
+            <p class="text-w">
+              크레마머니<br />최대혜택가<span class="border-box">?</span>
+            </p>
+            <p class="text-big">15,600원</p>
+          </div>
+          <div>
+            <p>Yes포인트<span class="border-box">?</span></p>
+            <p>750원(5% 적립)</p>
+          </div>
+          <div>
+            <p></p>
+            <p>
+              5만원이상 구매 시 2천원 추가적립<span class="border-box">?</span>
+            </p>
+          </div>
+        </div>
+        <div class="two">
+          <div>
+            <p>결제혜택</p>
+            <p>
+              카드/간편결제 혜택을 확인하세요<span class="border-box">▽</span>
+            </p>
+          </div>
+        </div>
+        <div class="two">
+          <div>
+            <p>배송안내<span class="border-box">＞</span></p>
+            <p>서울특별시 영등포구 은행로 11(여의도동, 일신빌딩)</p>
+          </div>
+          <div class="del">
+            <span>하루배송</span>
+            <span
+              >19시까지 주문하면
+              <span style="font-weight: bolder"></span> (4/22, 화) 도착
+              예정</span
+            >
+          </div>
+          <p>
+            배송비 : 유료(도서 15,000원 이상 무료)
+            <span class="border-box">?</span>
+          </p>
+        </div>
+      </section>
+      <script>
+        const book = document.querySelector(".book-img");
+        book.addEventListener("click", () => {
+          book.classList.toggle("flipped");
+        });
+      </script>
+    </main>
+  </body>
+</html>
