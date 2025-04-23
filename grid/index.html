@@ -3,13 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>Grid Layout</title>
   </head>
   <body>
-    <i id="menu-icon" class="fa-solid fa-bars"></i>
+    <input type="checkbox" name="check" id="check-icon" />
+    <label for="check-icon">
+      <i id="menu-icon" class="fa-solid fa-bars"></i>
+    </label>
+    <input type="radio" name="menu-list" id="menu1" checked>
+    <input type="radio" name="menu-list" id="menu2">
+    <input type="radio" name="menu-list" id="menu3">
+    <nav>
+      <img src="images/logo.png" alt="사이트로고이미지" />
+      <ul>
+        <li><label for="menu1">Homme</label></li>
+        <li><label for="menu2">Girl</label></li>
+        <li><label for="menu3">Kids</label></li>
+      </ul>
+    </nav>
     <main>
       <section id="box1">
         <p>Vogue Homme</p>
@@ -47,5 +64,6 @@
         <p></p>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
