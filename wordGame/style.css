@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+*{ margin: 0; padding: 0; }
+a{ text-decoration: none; color: inherit; }
+li{ list-style: none; }
+body{ height: 100vh; }
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* 귀엽게 배경색도 넣어줘요 */
+    overflow: hidden; /* 혹시 모를 스크롤 방지 */
+}
+
+.game-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px; /* 모서리를 둥글게! */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자도 살짝쿵 */
+    max-width: 90%; /* 핸드폰 화면에 꽉 차지 않게 */
+    width: 300px; /* 적당한 너비 */
+    box-sizing: border-box; /* 패딩과 보더가 너비에 포함되게 */
+}
+
+h1 {
+    color: #ff69b4; /* 핑크핑크하게 */
+    margin-bottom: 20px;
+}
+
+#word-display {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    min-height: 1.5em; /* 내용이 없어도 자리를 차지하게 */
+    transition: transform 0.3s ease-out; /* 단어 바뀔 때 애니메이션 준비 */
+    word-break: break-all; /* 단어가 길어지면 자동으로 줄바꿈 */
+}
+
+#word-input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%; /* 부모 너비에 맞추고 */
+    box-sizing: border-box; /* 패딩 포함 */
+}
+
+#submit-button {
+    padding: 10px 20px;
+    background-color: #00bfff; /* 하늘색 버튼 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* 버튼 색 변할 때 부드럽게 */
+    width: 100%; /* 부모 너비에 맞추고 */
+    box-sizing: border-box; /* 패딩 포함 */
+}
+
+#submit-button:hover {
+    background-color: #009acd; /* 마우스 올리면 색깔 샥! */
+}
+
+#result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ff4500; /* 결과는 눈에 띄게 주황색 */
+    min-height: 1.2em; /* 결과가 없어도 자리를 차지하게 */
+}
+
+/* 애니메이션 클래스 */
+.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.pop {
+    animation: pop 0.5s;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
