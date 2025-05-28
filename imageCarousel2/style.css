@@ -1,0 +1,312 @@
+/* style.css 파일 또는 HTML <style> 태그 안에 작성 */
+
+/* ====== 기본 스타일 및 전체 레이아웃 ====== */
+body {
+  font-family: 'Noto Sans KR', sans-serif; /* HTML에서 연결한 폰트 적용 */
+  line-height: 1.6; /* 가독성 향상을 위한 줄 간격 */
+  color: #333; /* 기본 글자색 */
+  background-color: #f8f8f8; /* 페이지 전체의 부드러운 배경색 */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 가로 스크롤바 숨김 */
+}
+
+.page-section {
+    padding: 80px 20px; /* 섹션별 상하 여백 */
+    max-width: 1200px; /* 섹션 콘텐츠 최대 너비 */
+    margin: 0 auto; /* 섹션 가운데 정렬 */
+    box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+    text-align: center; /* 섹션 기본 텍스트 정렬 */
+}
+
+.intro-section {
+    background-color: #ffffff; /* 소개 섹션 배경색 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* 미세한 그림자 */
+}
+
+.footer-section {
+    background-color: #eeeeee; /* 하단 섹션 배경색 */
+    margin-top: 40px; /* 캐러셀과의 간격 */
+}
+
+/* ====== 이미지 캐러셀 섹션 스타일 ====== */
+.carousel-section {
+   background: linear-gradient(135deg, #e0e0e0, #f0f0f0); /* 감각적인 그라데이션 배경 */
+   box-shadow: inset 0 0 20px rgba(0,0,0,0.1); /* 내측 그림자로 깊이 표현 */
+   padding: 60px 0; /* 상하 패딩, 좌우는 캐러셀 컨테이너에서 조절 */
+}
+
+
+.carousel-container {
+  width: 90%; /* 캐러셀 전체 너비 (조절 가능) */
+  max-width: 1000px; /* 캐러셀 최대 너비 */
+  margin: 0 auto; /* 가운데 정렬 */
+  overflow: hidden; /* **핵심:** 컨테이너 밖으로 나가는 내용 숨김 */
+  position: relative; /* 버튼, 점 등 자식 요소의 absolute 위치 기준 */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* 강한 그림자로 입체감 표현 */
+  border-radius: 15px; /* 모서리 둥글게 */
+  background-color: #ffffff; /* 캐러셀 배경색 */
+}
+
+.carousel-track {
+  display: flex; /* **핵심:** 슬라이드들을 가로로 나란히 배치 */
+  transition: transform 0.8s ease-in-out; /* **핵심:** transform 속성 변화 시 0.8초 동안 부드럽게 애니메이션 */
+}
+
+.carousel-slide {
+  min-width: 100%; /* **핵심:** 각 슬라이드는 컨테이너 너비에 꽉 차게 */
+  box-sizing: border-box; /* 패딩 포함 너비 계산 */
+  padding: 60px; /* 각 슬라이드 내부 여백 */
+  display: flex; /* 슬라이드 내용(텍스트/이미지) 정렬 */
+  justify-content: center; /* 내용 가운데 정렬 */
+  align-items: center; /* 세로 가운데 정렬 */
+}
+
+.slide-content {
+  display: flex; /* 텍스트와 이미지를 가로로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 60px; /* 텍스트와 이미지 사이 간격 */
+  width: 100%;
+  max-width: 800px; /* 슬라이드 내용 최대 너비 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+/* 이미지와 텍스트 레이아웃 순서 반전 */
+.slide-content.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.slide-text {
+  flex: 1; /* 남은 공간 최대한 차지 */
+  min-width: 300px; /* 텍스트 최소 너비 */
+}
+
+.slide-image {
+  flex-shrink: 0; /* 이미지가 줄어들지 않도록 고정 */
+  width: 45%; /* 이미지 영역 너비 */
+  max-width: 350px; /* 이미지 최대 너비 */
+  border-radius: 10px; /* 이미지 모서리 둥글게 */
+  overflow: hidden; /* 둥근 모서리 밖으로 나가는 부분 숨김 */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* 이미지 그림자 */
+}
+
+.slide-image img {
+  display: block; /* 이미지 하단 미세 공백 제거 */
+  width: 100%; /* 부모 요소 너비에 꽉 차게 */
+  height: auto; /* 이미지 비율 유지 */
+}
+
+/* style.css 파일 또는 HTML <style> 태그 안에 이어서 작성 */
+
+/* ====== 텍스트 스타일 디테일 ====== */
+.section-content h1 {
+    color: #2c3e50; /* 섹션 제목 색상 */
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+
+.slide-text h2 {
+  color: #34495e; /* 슬라이드 제목 색상 (진한 톤) */
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700; /* 제목 글씨 두껍게 */
+  line-height: 1.4;
+  letter-spacing: -0.5px; /* 자간 조절 */
+}
+
+.slide-text p, .slide-text ul {
+  color: #555; /* 슬라이드 본문 글자색 */
+  margin-bottom: 15px;
+  font-weight: 400; /* 본문 글씨 두께 */
+}
+
+.slide-text strong {
+    color: #2c3e50; /* 강조 텍스트 색상 (섹션 제목 색상과 통일) */
+    font-weight: 700;
+}
+
+.slide-text ul {
+    padding-left: 20px; /* 목록 들여쓰기 */
+    list-style: disc; /* 기본 원형 불릿 */
+}
+
+.slide-text li {
+    margin-bottom: 8px; /* 목록 항목 간격 */
+    line-height: 1.5;
+}
+
+.slide-text li::marker {
+    color: #3498db; /* 불릿 색상 (파란색 계열로 포인트) */
+}
+
+/* ====== 버튼 스타일 ====== */
+.carousel-btn {
+  position: absolute; /* 캐러셀 컨테이너 기준으로 위치 지정 */
+  top: 50%;
+  transform: translateY(-50%); /* 세로 가운데 정렬 */
+  background-color: rgba(52, 73, 94, 0.6); /* 어두운 반투명 배경 */
+  color: white; /* 화살표 색상 */
+  border: none;
+  padding: 12px 15px;
+  cursor: pointer;
+  z-index: 10; /* 다른 요소보다 위에 보이도록 z-index 설정 */
+  border-radius: 50%; /* 원형 버튼 */
+  font-size: 18px; /* 화살표 크기 */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease; /* 부드러운 애니메이션 */
+  opacity: 0.8; /* 기본 투명도 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 버튼 그림자 */
+}
+
+.carousel-btn:hover {
+  background-color: rgba(52, 73, 94, 0.8); /* 호버 시 배경색 진하게 */
+  transform: translateY(-50%) scale(1.05); /* 호버 시 살짝 커지게 */
+  opacity: 1;
+}
+
+.prev-btn {
+  left: 20px; /* 왼쪽에서 떨어진 거리 */
+}
+
+.next-btn {
+  right: 20px; /* 오른쪽에서 떨어진 거리 */
+}
+
+/* ====== 페이지 표시 점들 스타일 ====== */
+.carousel-pagination {
+  position: absolute; /* 캐러셀 컨테이너 기준으로 위치 지정 */
+  bottom: 20px; /* 캐러셀 하단에서 떨어진 거리 */
+  left: 50%;
+  transform: translateX(-50%); /* 가로 가운데 정렬 */
+  display: flex; /* 점들을 가로로 나란히 배치 */
+  gap: 10px; /* 점들 사이 간격 */
+  z-index: 10;
+}
+
+.pagination-dot {
+  width: 10px; /* 점 크기 */
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5); /* 반투명 흰색 점 */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* 점 테두리 */
+  border-radius: 50%; /* 원형 점 */
+  cursor: pointer; /* 마우스 오버 시 손가락 모양 */
+  transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; /* 부드러운 애니메이션 */
+}
+
+.pagination-dot.active {
+  background-color: #3498db; /* 활성 점 색상 (포인트 색상) */
+  border-color: #3498db;
+  transform: scale(1.2); /* 활성 점 살짝 크게 */
+}
+
+/* ====== 반응형 디자인 (다양한 화면 크기 대응) ====== */
+@media (max-width: 900px) { /* 화면 너비 900px 이하 */
+    .carousel-slide {
+        padding: 50px 30px;
+    }
+    .slide-content {
+        gap: 40px;
+    }
+    .slide-text {
+        min-width: 250px;
+    }
+    .slide-image {
+        width: 40%;
+        max-width: 250px;
+    }
+     .carousel-btn {
+        left: 15px;
+        right: 15px;
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+    .carousel-pagination {
+        bottom: 15px;
+        gap: 8px;
+    }
+     .pagination-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 700px) { /* 화면 너비 700px 이하 (스마트폰 가로, 태블릿 세로) */
+    .page-section {
+        padding: 40px 15px; /* 섹션 여백 줄이기 */
+    }
+
+    .carousel-slide {
+        padding: 40px 20px; /* 슬라이드 여백 조절 */
+    }
+
+    .slide-content {
+        flex-direction: column; /* 이미지와 텍스트를 세로로 쌓기 */
+        gap: 30px;
+        text-align: center; /* 텍스트 가운데 정렬 */
+    }
+
+   .slide-content.reverse-layout {
+        flex-direction: column; /* 반전 레이아웃도 세로로 쌓기 */
+   }
+
+    .slide-text {
+        min-width: auto; /* 최소 너비 제한 해제 */
+        text-align: center; /* 텍스트 가운데 정렬 */
+    }
+
+    .slide-text ul {
+        padding-left: 0; /* 목록 들여쓰기 제거 */
+        list-style-position: inside; /* 불릿을 텍스트 안으로 */
+    }
+
+
+    .slide-image {
+        width: 70%; /* 이미지 너비 늘리기 */
+        max-width: 200px; /* 이미지 최대 너비 조절 */
+    }
+
+    .carousel-btn {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) { /* 화면 너비 480px 이하 (아주 작은 스마트폰) */
+    .page-section {
+        padding: 30px 10px;
+    }
+    .carousel-slide {
+        padding: 30px 15px;
+    }
+    .slide-content {
+        gap: 20px;
+    }
+     .slide-text h2 {
+        font-size: 1.3em; /* 제목 크기 줄이기 */
+        margin-bottom: 15px;
+    }
+     .slide-text p, .slide-text ul {
+        font-size: 0.9em; /* 본문 크기 줄이기 */
+        margin-bottom: 10px;
+    }
+     .slide-text li {
+        margin-bottom: 5px;
+    }
+    .slide-image {
+        width: 80%;
+        max-width: 180px;
+    }
+    .carousel-pagination {
+        bottom: 10px;
+        gap: 6px;
+    }
+     .pagination-dot {
+        width: 6px;
+        height: 6px;
+    }
+}

@@ -1,0 +1,314 @@
+/* style.css 파일 또는 HTML <style> 태그 안에 이어서 작성 */
+
+/* ====== 기본 스타일 및 전체 레이아웃 설정 ====== */
+body {
+  font-family: 'Noto Sans KR', sans-serif; /* HTML에서 연결한 예쁜 폰트 적용 */
+  line-height: 1.6; /* 가독성을 높이는 줄 간격 */
+  color: #333; /* 기본 글자색 */
+  background-color: #f8f8f8; /* 페이지 전체의 부드러운 배경색 */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 혹시라도 생길 수 있는 가로 스크롤바 숨김 */
+}
+
+.designer-intro-section {
+  padding: 80px 20px; /* 캐러셀 섹션의 위아래 여백 */
+  background: linear-gradient(to bottom, #ffffff, #f0eaff); /* 감각적인 느낌을 더하는 상큼한 그라데이션 배경 */
+  text-align: center; /* 섹션 안의 내용들 가운데 정렬 (나중에 텍스트는 다시 왼쪽 정렬할 거야!) */
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 1000px; /* 캐러셀이 너무 커지지 않게 최대 너비 지정 (조절 가능!) */
+  margin: 0 auto; /* 캐러셀을 페이지 가운데로 정렬하는 마법! */
+  overflow: hidden; /* **핵심!** 캐러셀 컨테이너 영역을 벗어나는 슬라이드는 감쪽같이 숨김! */
+  position: relative; /* 이 안에 있는 버튼이나 점들의 위치를 지정하는 기준이 됨 */
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18); /* 더 깊이 있고 분위기 있는 그림자 효과 */
+  border-radius: 20px; /* 캐러셀 모서리를 더 부드럽고 감각적으로 둥글게! */
+  background-color: #ffffff; /* 캐러셀 배경색 흰색 */
+}
+
+.carousel-track {
+  display: flex; /* **핵심!** 이 안에 있는 슬라이드들을 가로 방향으로 나란히 배치 */
+  transition: transform 0.8s ease-in-out; /* **핵심!** transform 속성이 변할 때 0.8초 동안 부드러운 애니메이션! (시간 조절 가능!) */
+}
+
+.carousel-slide {
+  min-width: 100%; /* **핵심!** 각 슬라이드는 캐러셀 컨테이너의 너비만큼 꽉 차게! */
+  box-sizing: border-box; /* padding 값이 너비 계산에 포함되도록 설정 */
+  padding: 60px; /* 각 슬라이드 안쪽의 충분한 여백 */
+  display: flex; /* 슬라이드 안의 내용(텍스트/이미지)을 정렬하기 위해 flex 사용 */
+  justify-content: center; /* 슬라이드 내용을 가로 가운데로 정렬 */
+  align-items: center; /* 슬라이드 내용을 세로축 가운데로 정렬 */
+}
+
+.slide-content {
+  display: flex; /* 텍스트와 이미지를 가로로 배치하기 위해 flex 사용 */
+  align-items: center; /* 텍스트와 이미지의 세로 중앙을 맞춰 정렬 */
+  gap: 60px; /* 텍스트와 이미지 사이의 넉넉한 간격 */
+  width: 100%;
+  max-width: 900px; /* 슬라이드 내용의 최대 너비 제한 */
+  text-align: left; /* 슬라이드 내용 안의 텍스트는 기본적으로 왼쪽 정렬 */
+}
+
+/* 이미지와 텍스트 레이아웃 순서를 바꾸는 클래스 */
+.slide-content.reverse-layout {
+    flex-direction: row-reverse; /* 가로 방향 배치를 반대로 (이미지가 왼쪽에 오도록) */
+}
+
+.slide-text {
+  flex: 1; /* 남은 공간을 최대한 차지하도록 설정 */
+  min-width: 300px; /* 텍스트 영역의 최소 너비 (이미지가 너무 커져도 텍스트 공간 확보) */
+}
+
+.slide-image {
+  flex-shrink: 0; /* **핵심!** 이미지가 줄어들지 않고 고정된 크기를 유지하도록 */
+  width: 45%; /* 이미지 영역의 너비 (텍스트 영역과의 비율 조절) */
+  max-width: 400px; /* 이미지가 너무 커지지 않게 최대 너비 제한 */
+  border-radius: 12px; /* 이미지 모서리를 둥글게! */
+  overflow: hidden; /* 둥근 모서리 밖으로 이미지가 삐져나오지 않도록 숨김 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 이미지에도 은은한 그림자 효과 */
+  border: 4px solid #eeeeee; /* 이미지를 살짝 감싸는 얇은 테두리 */
+}
+
+.slide-image img {
+  display: block; /* 이미지 아래에 생기는 이상한 미세한 공백 제거 */
+  width: 100%; /* 부모 요소(slide-image)의 너비에 꽉 차게 */
+  height: auto; /* 이미지의 원래 비율을 유지하며 높이 자동 조절 */
+}
+
+/* style.css 파일 또는 HTML <style> 태그 안에 이어서 작성 */
+
+/* ====== 텍스트 스타일 디테일 ====== */
+.slide-text h2 {
+  color: #673ab7; /* 제목에 감성적인 보라색 포인트 색상 적용 */
+  margin-top: 0; /* 제목 위쪽 여백 제거 */
+  margin-bottom: 25px; /* 제목 아래쪽 여백을 좀 더 줘서 가독성 높이기 */
+  font-weight: 700; /* 제목 글씨 두껍게 */
+  line-height: 1.4; /* 제목 줄 간격 */
+  letter-spacing: -0.5px; /* 자간 살짝 줄여서 세련된 느낌 */
+}
+
+.slide-text p, .slide-text ul {
+  color: #555; /* 본문 글자색 */
+  margin-bottom: 20px; /* 문단이나 목록 아래쪽 여백 */
+  font-weight: 400; /* 본문 글씨 두께 (기본) */
+}
+
+.slide-text strong {
+    color: #673ab7; /* 강조 텍스트에 포인트 색상 적용 */
+    font-weight: 700; /* 강조 텍스트 글씨 두껍게 */
+}
+
+.slide-text ul {
+    padding-left: 25px; /* 목록 들여쓰기 */
+    list-style: disc; /* 기본 원형 불릿 사용 */
+}
+
+.slide-text li {
+    margin-bottom: 12px; /* 목록 각 항목 간격 넓혀서 보기 좋게 */
+    line-height: 1.5; /* 목록 항목 줄 간격 */
+}
+
+.slide-text li::marker {
+    color: #8e24aa; /* 불릿 색상 변경 (포인트 색상과 어울리게 다른 보라색 톤) */
+}
+
+/* ====== 버튼 스타일 ====== */
+.carousel-btn {
+  position: absolute; /* 캐러셀 컨테이너 기준으로 위치 지정 */
+  top: 50%; /* 위에서 50% 지점 */
+  transform: translateY(-50%); /* 버튼 자체 높이의 절반만큼 위로 올려서 정확한 세로 가운데 정렬 */
+  background-color: rgba(0, 0, 0, 0.4); /* 반투명 검정 배경색 (조금 더 진하게) */
+  color: white; /* 버튼 글자색 (화살표) 흰색 */
+  border: none; /* 버튼 테두리 없애기 */
+  padding: 16px 20px; /* 버튼 안쪽 여백 (크기 조절) */
+  cursor: pointer; /* 마우스 오버 시 손가락 모양으로 변경 */
+  z-index: 10; /* 이미10지10나 다른 요소보다 위에 보이도록 z-index 설정 */
+  border-radius: 50%; /* 버튼 모양을 완벽한 원형으로! */
+  font-size: 22px; /* 화살표 기호 크기 좀 더 키우기 */
+  font-weight: bold; /* 화살표 기호 두껍게 */
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease; /* 호버 시 부드러운 애니메이션 */
+  opacity: 0.9; /* 기본 투명도 설정 (조금 덜 투명하게) */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 버튼에도 작은 그림자 */
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6); /* 마우스 오버 시 배경색 더 진하게 */
+  transform: translateY(-50%) scale(1.1); /* 마우스 오버 시 살짝 커지게! */
+  opacity: 1; /* 마우스 오버 시 투명도 없애기 */
+}
+
+.prev-btn {
+  left: 30px; /* 캐러셀 왼쪽에서 떨어진 거리 (좀 더 안쪽으로) */
+}
+
+.next-btn {
+  right: 30px; /* 캐러셀 오른쪽에서 떨어진 거리 (좀 더 안쪽으로) */
+}
+
+/* ====== 페이지 표시 점들 스타일 ====== */
+.carousel-pagination {
+  position: absolute; /* 캐러셀 컨테이너 기준으로 위치 지정 */
+  bottom: 30px; /* 캐러셀 아래쪽에서 떨어진 거리 (좀 더 위로) */
+  left: 50%; /* 왼쪽에서 50% 지점 */
+  transform: translateX(-50%); /* 점 컨테이너 자체 너비의 절반만큼 왼쪽으로 옮겨서 가로 가운데 정렬 */
+  display: flex; /* 점들을 가로 방향으로 나란히 배치 */
+  gap: 15px; /* 점들 사이의 간격 (좀 더 넓게) */
+  z-index: 10; /* 다른 요소보다 위에 보이도록 z-index 설정 */
+}
+
+.pagination-dot {
+  width: 14px; /* 점의 너비 좀 더 키우기 */
+  height: 14px; /* 점의 높이 (너비와 같게 해서 원형 유지) */
+  background-color: rgba(255, 255, 255, 0.7); /* 반투명 흰색 배경 (좀 덜 투명하게) */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* 점 테두리 */
+  border-radius: 50%; /* 점 모양을 완벽한 원형으로! */
+  cursor: pointer; /* 마우스 오버 시 손가락 모양으로 변경 */
+  transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; /* 호버 및 활성 시 부드러운 애니메이션 */
+}
+
+.pagination-dot.active {
+  background-color: #673ab7; /* **활성 점 색상!** 포인트 색상과 맞춤 */
+  border-color: #673ab7; /* 활성 점 테두리 색상 */
+  transform: scale(1.3); /* 활성 점은 좀 더 크게! */
+}
+
+/* ====== 반응형 디자인 (작은 화면 대응) ====== */
+@media (max-width: 900px) { /* 화면 너비가 900px 이하일 때 (태블릿 가로, 세로 등) */
+    .carousel-slide {
+        padding: 50px 30px; /* 슬라이드 안쪽 여백 조절 */
+    }
+    .slide-content {
+        gap: 40px; /* 텍스트/이미지 간격 조절 */
+    }
+    .slide-image {
+        width: 40%; /* 이미지 너비 비율 조절 */
+        max-width: 300px; /* 이미지 최대 너비 조절 */
+    }
+     .carousel-btn {
+        left: 20px;
+        right: 20px;
+        padding: 14px 16px;
+        font-size: 20px;
+    }
+    .carousel-pagination {
+        bottom: 20px;
+        gap: 12px;
+    }
+     .pagination-dot {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+
+@media (max-width: 768px) { /* 화면 너비가 768px 이하일 때 (대부분 스마트폰 가로, 태블릿 세로) */
+  .designer-intro-section {
+    padding: 40px 15px; /* 섹션 여백 줄이기 */
+  }
+
+  .carousel-slide {
+    padding: 30px 20px; /* 슬라이드 안쪽 여백 줄이기 */
+  }
+
+  .slide-content {
+    flex-direction: column; /* **핵심!** 작은 화면에서는 이미지와 텍스트를 세로로 쌓기! */
+    gap: 30px; /* 간격 줄이기 */
+    text-align: center; /* 텍스트를 가운데로 정렬 */
+  }
+
+   /* reverse-layout도 작은 화면에서는 세로로 쌓이도록 */
+   .slide-content.reverse-layout {
+    flex-direction: column;
+   }
+
+  .slide-text {
+    min-width: auto; /* 최소 너비 제한 해제 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+  }
+
+  .slide-text ul {
+    padding-left: 0; /* 목록 들여쓰기 제거 */
+    list-style-position: inside; /* 불릿을 텍스트 안으로 넣기 */
+   }
+
+
+  .slide-image {
+    width: 80%; /* 작은 화면에서 이미지 너비 늘리기 */
+    max-width: 280px; /* 이미지 최대 너비 제한 */
+  }
+
+  .carousel-btn {
+    padding: 10px 12px; /* 버튼 크기 줄이기 */
+    font-size: 18px; /* 화살표 크기 줄이기 */
+  }
+
+  .prev-btn {
+    left: 15px; /* 왼쪽에서 떨어진 거리 줄이기 */
+  }
+
+  .next-btn {
+    right: 15px; /* 오른쪽에서 떨어진 거리 줄이기 */
+  }
+
+  .carousel-pagination {
+    bottom: 15px; /* 아래쪽에서 떨어진 거리 줄이기 */
+    gap: 10px; /* 점들 사이 간격 줄이기 */
+  }
+
+  .pagination-dot {
+    width: 10px; /* 점 크기 줄이기 */
+    height: 10px; /* 점 크기 줄이기 */
+  }
+}
+
+@media (max-width: 480px) { /* 더 작은 화면 (아주 작은 스마트폰) 대응 */
+    .carousel-slide {
+        padding: 25px 15px;
+    }
+
+    .slide-content {
+        gap: 25px;
+    }
+
+    .slide-text h2 {
+        margin-bottom: 20px;
+        font-size: 1.3em; /* 제목 크기 줄이기 */
+    }
+
+    .slide-text p, .slide-text ul {
+        font-size: 0.9em; /* 본문 크기 줄이기 */
+    }
+
+    .slide-text li {
+        margin-bottom: 8px;
+    }
+
+    .slide-image {
+        width: 90%; /* 작은 화면에서 이미지 더 크게 */
+        max-width: 250px;
+    }
+
+    .carousel-btn {
+        padding: 8px 10px;
+        font-size: 16px;
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+    .next-btn {
+        right: 10px;
+    }
+
+    .carousel-pagination {
+        bottom: 10px;
+        gap: 8px;
+    }
+
+    .pagination-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
